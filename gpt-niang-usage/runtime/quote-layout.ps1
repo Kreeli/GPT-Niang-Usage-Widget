@@ -87,3 +87,14 @@ function Set-WidgetSceneLayout {
     $scene.Width=184;$scene.Height=115
   }
 }
+
+function Warm-WidgetQuoteLayouts([string]$DataDir,[string]$CharacterId) {
+  $ids=if($CharacterId){@($CharacterId)}else{@('deepseek-niang','gpt-niang')}
+  foreach($id in $ids){
+    foreach($row in (Get-WidgetQuoteSettings $DataDir $id).quotes){
+      $display=if($script:quoteLayoutMap.ContainsKey($row.text)){$script:quoteLayoutMap[$row.text]}else{$row.text}
+      $expected=if($display.Contains("`n")){($display-split "`n").Count}else{0}
+      $null=Get-WidgetQuoteLayout $display $script:ui.QuoteText $expected
+    }
+  }
+}

@@ -2,7 +2,7 @@
   if($script:quoteEditor -and $script:quoteEditor.IsVisible){$script:quoteEditor.Activate()|Out-Null;return}
   $editor=[Windows.Markup.XamlReader]::Parse(@'
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
- Title="GPT 娘 · 我的语录" Width="540" Height="480" MinWidth="440" MinHeight="340" ShowInTaskbar="False"
+ Title="人物语录" Width="540" Height="480" MinWidth="440" MinHeight="340" ShowInTaskbar="False"
  FontFamily="Microsoft YaHei UI" FontSize="14" Background="#FAF8FD" WindowStartupLocation="CenterScreen">
  <Grid Margin="22">
   <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
@@ -19,12 +19,14 @@
  </Grid>
 </Window>
 '@)
+  $editor.Tag=Resolve-WidgetQuoteCharacter ''
+  $editor.Title=(Get-WidgetQuoteCharacterName ([string]$editor.Tag))+' · 我的语录'
   $script:quoteEditor=$editor
   $editor.Owner=$script:window
   $lines=$editor.FindName('Lines');$feedback=$editor.FindName('Feedback')
-  $current=Get-WidgetQuoteSettings $script:dataDir
+  $current=Get-WidgetQuoteSettings $script:dataDir ([string]$editor.Tag) -Refresh
   $lines.Text=($current.quotes|ForEach-Object{if($_.weight-eq 1){$_.text}else{([string]$_.weight)+' | '+$_.text}})-join [Environment]::NewLine
-  $feedback.Text=if($current.error){$current.error}else{'每条最多 200 字。语录在你的电脑上保存。'}
+  $feedback.Text=if($current.error){$current.error}else{'每条最多 200 字。仅修改标题中的人物，其他人物的台词独立保存。'}
   $editor.FindName('Save').Add_Click({
     try{
       $rows=@(foreach($line in ($script:quoteEditor.FindName('Lines').Text -split '\r?\n')){
@@ -32,13 +34,14 @@
         if($text-match '^\s*(\d+(?:\.\d+)?)\s*\|\s*(.+)$'){@{text=$Matches[2].Trim();weight=[double]::Parse($Matches[1],[Globalization.CultureInfo]::InvariantCulture)}}
         else{@{text=$text;weight=1}}
       })
-      $saved=Save-WidgetQuotes $script:dataDir $rows
+      $saved=Save-WidgetQuotes $script:dataDir $rows ([string]$script:quoteEditor.Tag)
+      Warm-WidgetQuoteLayouts $script:dataDir ([string]$script:quoteEditor.Tag)
       $script:quoteEditor.FindName('Feedback').Text="已保存 $($saved.quotes.Count) 句。下一次点击气泡时就会使用。"
     }catch{$script:quoteEditor.FindName('Feedback').Text=$_.Exception.Message}
   })
   $editor.FindName('Defaults').Add_Click({
     try{
-      $restored=Reset-WidgetQuotes $script:dataDir
+      $restored=Reset-WidgetQuotes $script:dataDir ([string]$script:quoteEditor.Tag)
       $script:quoteEditor.FindName('Lines').Text=($restored.quotes|ForEach-Object{$_.text})-join [Environment]::NewLine
       $script:quoteEditor.FindName('Feedback').Text='已恢复内置语录，你的旧列表已备份。'
     }catch{$script:quoteEditor.FindName('Feedback').Text=$_.Exception.Message}
@@ -111,14 +114,15 @@ function Initialize-WidgetSettingsMenu {
 <ControlTemplate xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" TargetType="ContextMenu"><Border Background="#FFFCFF" BorderBrush="#DFD1EC" BorderThickness="1" CornerRadius="14" Padding="10,9"><ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" CanContentScroll="False"><ItemsPresenter/></ScrollViewer></Border></ControlTemplate>
 '@)
   $heading=New-Object Windows.Controls.StackPanel;$heading.Margin=[Windows.Thickness]::new(10,5,8,9)
-  $title=New-SettingsText 'GPT 娘' 18 '#604B79';$title.FontWeight=[Windows.FontWeights]::Bold
+  $title=New-SettingsText '娘化桌宠' 18 '#604B79';$title.FontWeight=[Windows.FontWeights]::Bold
   $hint=New-SettingsText '常用操作在前，更多设置在下方' 11.5 '#9685A8';$hint.Margin=[Windows.Thickness]::new(0,3,0,0)
   $heading.Children.Add($title)|Out-Null;$heading.Children.Add($hint)|Out-Null;Add-SettingsPanel $heading -Passive
   $script:settingsMenuUi.Bubble=Add-SettingsAction '查看额度' {if(!$script:collapsed -and $script:bubbleMode-eq 'quota'){Hide-Quota}else{Show-Quota}} -ReturnItem
   $script:settingsMenuUi.Quote=Add-SettingsAction '换一句台词' {if($script:collapsed){Show-Quota};Switch-Scene 'quote'} -ReturnItem
   Add-SettingsAction '刷新额度' {Request-Refresh}
-  Add-SettingsAction '编辑我的语录' {Open-QuoteEditor}
+  Add-SettingsAction '编辑此人物的语录' {Open-QuoteEditor}
   Add-SettingsDivider
+  $script:settingsMenuUi.Characters=Add-SettingsSubmenu '人物形象' {} -ReturnItem
   $script:settingsMenuUi.Appearance=Add-SettingsSubmenu '外观与位置' {
   $presets=New-Object Windows.Controls.Primitives.UniformGrid;$presets.Columns=3;$presets.Margin=[Windows.Thickness]::new(0,1,0,2);$script:settingsMenuUi.SizeButtons=@()
   foreach($choice in @(@{label='小 · 80%';scale=0.8},@{label='标准 · 100%';scale=1.0},@{label='大 · 140%';scale=1.4})){
@@ -168,7 +172,7 @@ function Initialize-WidgetSettingsMenu {
   $script:settingsMenuUi.Tap=Add-SettingsAction '点角色也切换内容' {param($sender,$event)$script:bubbleTapAdvance=$sender.IsChecked;Save-Settings} -Description '开启后，连续点角色就能看下一句' -Checkable -ReturnItem
   } -ReturnItem
   Add-SettingsDivider
-  $exit=Add-SettingsAction '退出 GPT 娘' {Exit-WidgetForSession} -ReturnItem;$exit.Foreground=[Windows.Media.BrushConverter]::new().ConvertFromString('#A1788D')
+  $exit=Add-SettingsAction '退出桌宠' {Exit-WidgetForSession} -ReturnItem;$exit.Foreground=[Windows.Media.BrushConverter]::new().ConvertFromString('#A1788D')
   $script:context.Add_Opened({Update-WidgetSettingsMenu;Set-WidgetMenuBounds;Position-WidgetMenuToHost});Update-WidgetSettingsMenu;$script:window.ContextMenu=$script:context
 }
 
@@ -206,6 +210,7 @@ function Update-WidgetSizePresets{
 function Update-WidgetSettingsMenu{
   $script:settingsMenuSync=$true
   try{
+    Update-WidgetCharacterMenu
     $script:settingsMenuUi.Bubble.Header=if(!$script:collapsed -and $script:bubbleMode-eq 'quota'){'收起额度气泡'}else{'查看额度'}
     $script:settingsMenuUi.Tap.IsChecked=$script:bubbleTapAdvance;$script:settingsMenuUi.Sound.IsChecked=$script:soundOn;$script:settingsMenuUi.Hide.IsChecked=$script:hideMenu
     $script:settingsMenuUi.ColorLinked.IsChecked=$script:colorMode-eq 'linked';$script:settingsMenuUi.ColorRainbow.IsChecked=$script:colorMode-eq 'rainbow';$script:settingsMenuUi.ColorOriginal.IsChecked=$script:colorMode-eq 'original'

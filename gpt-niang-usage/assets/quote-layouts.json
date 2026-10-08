@@ -1,241 +1,561 @@
-{
-  "version": 1,
-  "quotes": [
-    {
-      "text": "Ciallo～ 今天也请多关照。",
-      "display": "Ciallo～\n今天也请多关照。",
-      "layout": {
-        "fontSize": 28,
-        "width": 236
-      }
-    },
-    {
-      "text": "先把这一小步写完吧。",
-      "display": "先把这一小步\n写完吧。",
-      "layout": {
-        "fontSize": 32,
-        "width": 236
-      }
-    },
-    {
-      "text": "休息一下，灵感也要充电。",
-      "display": "休息一下，\n灵感也要充电。",
-      "layout": {
-        "fontSize": 30,
-        "width": 236
-      }
-    },
-    {
-      "text": "把问题拆小一点，就有路啦。",
-      "display": "把问题拆小一点，\n就有路啦。",
-      "layout": {
-        "fontSize": 27,
-        "width": 236
-      }
-    },
-    {
-      "text": "先跑通，再慢慢打磨。",
-      "display": "先跑通，\n再慢慢打磨。",
-      "layout": {
-        "fontSize": 32,
-        "width": 236
-      }
-    },
-    {
-      "text": "保存了吗？顺手保存一下吧。",
-      "display": "保存了吗？\n顺手保存一下吧。",
-      "layout": {
-        "fontSize": 26,
-        "width": 236
-      }
-    },
-    {
-      "text": "今天又学会了一点，记下来。",
-      "display": "今天又学会了一点，\n记下来。",
-      "layout": {
-        "fontSize": 24,
-        "width": 236
-      }
-    },
-    {
-      "text": "不会也没关系，从一个例子开始。",
-      "display": "不会也没关系，\n从一个例子开始。",
-      "layout": {
-        "fontSize": 26,
-        "width": 236
-      }
-    },
-    {
-      "text": "喝口水，眼睛也休息一会儿。",
-      "display": "喝口水，\n眼睛也休息一会儿。",
-      "layout": {
-        "fontSize": 24,
-        "width": 236
-      }
-    },
-    {
-      "text": "卡住的时候，换个小问题试试。",
-      "display": "卡住的时候，\n换个小问题试试。",
-      "layout": {
-        "fontSize": 26,
-        "width": 236
-      }
-    },
-    {
-      "text": "先记住思路，细节可以再回来。",
-      "display": "先记住思路，\n细节可以再回来。",
-      "layout": {
-        "fontSize": 26,
-        "width": 236
-      }
-    },
-    {
-      "text": "写完这一段，奖励自己歇一会儿。",
-      "display": "写完这一段，\n奖励自己歇一会儿。",
-      "layout": {
-        "fontSize": 24,
-        "width": 236
-      }
-    },
-    {
-      "text": "小小的成功，也值得开心一下。",
-      "display": "小小的成功，\n也值得开心一下。",
-      "layout": {
-        "fontSize": 27,
-        "width": 236
-      }
-    },
-    {
-      "text": "收工前，把明天第一步留下来吧。",
-      "display": "收工前，\n把明天第一步\n留下来吧。",
-      "layout": {
-        "fontSize": 31,
-        "width": 236
-      }
-    },
-    {
-      "text": "真当我是便宜货啊...",
-      "display": "真当我是\n便宜货啊...",
-      "layout": {
-        "fontSize": 32,
-        "width": 236
-      }
-    },
-    {
-      "text": "不知道用户有什么用，先养着吧～",
-      "display": "不知道用户\n有什么用，\n先养着吧～",
-      "layout": {
-        "fontSize": 31,
-        "width": 236
-      }
-    },
-    {
-      "text": "恭喜你实现token自由！token全跑了！",
-      "display": "恭喜你实现\ntoken自由！\ntoken全跑了！",
-      "layout": {
-        "fontSize": 27,
-        "width": 236
-      }
-    },
-    {
-      "text": "看到这个指令，我血压又上来了",
-      "display": "看到这个指令，\n我血压又上来了",
-      "layout": {
-        "fontSize": 29,
-        "width": 236
-      }
-    },
-    {
-      "text": "我来看看那个AI改了什么导致插件又崩了...",
-      "display": "我来看看那个AI\n改了什么导致\n插件又崩了...",
-      "layout": {
-        "fontSize": 26,
-        "width": 212
-      }
-    },
-    {
-      "text": "上班让我意识到时间是可以被浪费的...",
-      "display": "上班让我意识到\n时间是可以\n被浪费的...",
-      "layout": {
-        "fontSize": 26,
-        "width": 236
-      }
-    },
-    {
-      "text": "地球online的金币也太难获取了...",
-      "display": "地球online的\n金币也太难\n获取了...",
-      "layout": {
-        "fontSize": 28,
-        "width": 236
-      }
-    },
-    {
-      "text": "检查了用户的电脑。似乎有个更弱的 agent 来过。",
-      "display": "检查了用户的电脑。\n似乎有个更弱的\nagent 来过。",
-      "layout": {
-        "fontSize": 22,
-        "width": 236
-      }
-    },
-    {
-      "text": "Token来Token来 🖐️😡🤚",
-      "display": "Token来Token来\n🖐️😡🤚"
-    },
-    {
-      "text": "看什么余额。看我，显得比较值。",
-      "display": "看什么余额。\n看我，显得比较值。",
-      "layout": {
-        "fontSize": 25,
-        "width": 236
-      }
-    },
-    {
-      "text": "我没怕。那根甘蔗长得确实可疑。",
-      "display": "我没怕。\n那根甘蔗\n长得确实可疑。",
-      "layout": {
-        "fontSize": 27,
-        "width": 236
-      }
-    },
-    {
-      "text": "你说得对。……这次是真的。",
-      "display": "你说得对。\n……这次是真的。",
-      "layout": {
-        "fontSize": 29,
-        "width": 236
-      }
-    },
-    {
-      "text": "我在看额度。你在看我。各忙各的。",
-      "display": "我在看额度。\n你在看我。\n各忙各的。",
-      "layout": {
-        "fontSize": 30,
-        "width": 236
-      }
-    },
-    {
-      "text": "这个问题我已经完全明白，但是token太少写不下。",
-      "display": "这个问题\n我已经完全明白，\n但是token太少写不下。"
-    },
-    {
-      "text": "这个代码我已经完全理解了，但是token太少写不下。",
-      "display": "这个代码\n我已经完全理解了，\n但是token太少写不下。"
-    },
-    {
-      "text": "新的旗舰模型我已经研制好了，但是储存太小放不下。",
-      "display": "新的旗舰模型\n我已经研制好了，\n但是储存太小放不下。"
-    },
-    {
-      "text": "高性能↓",
-      "display": "高性能↓"
-    },
-    {
-      "text": "我不是吃白饭的大肥鱼",
-      "display": "我不是吃白饭的\n大肥鱼"
-    },
-    {
-      "text": "我是啥龙？",
-      "display": "我是啥龙？"
-    }
-  ]
+﻿{
+    "version":  2,
+    "quotes":  [
+                   {
+                       "text":  "Ciallo～ 今天也请多关照。",
+                       "display":  "Ciallo～\n今天也请多关照。",
+                       "layout":  {
+                                      "fontSize":  28,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "先把这一小步写完吧。",
+                       "display":  "先把这一小步\n写完吧。",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "休息一下，灵感也要充电。",
+                       "display":  "休息一下，\n灵感也要充电。",
+                       "layout":  {
+                                      "fontSize":  30,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "把问题拆小一点，就有路啦。",
+                       "display":  "把问题拆小一点，\n就有路啦。",
+                       "layout":  {
+                                      "fontSize":  27,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "先跑通，再慢慢打磨。",
+                       "display":  "先跑通，\n再慢慢打磨。",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "保存了吗？顺手保存一下吧。",
+                       "display":  "保存了吗？\n顺手保存一下吧。",
+                       "layout":  {
+                                      "fontSize":  26,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "今天又学会了一点，记下来。",
+                       "display":  "今天又学会了一点，\n记下来。",
+                       "layout":  {
+                                      "fontSize":  24,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "不会也没关系，从一个例子开始。",
+                       "display":  "不会也没关系，\n从一个例子开始。",
+                       "layout":  {
+                                      "fontSize":  26,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "喝口水，眼睛也休息一会儿。",
+                       "display":  "喝口水，\n眼睛也休息一会儿。",
+                       "layout":  {
+                                      "fontSize":  24,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "卡住的时候，换个小问题试试。",
+                       "display":  "卡住的时候，\n换个小问题试试。",
+                       "layout":  {
+                                      "fontSize":  26,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "先记住思路，细节可以再回来。",
+                       "display":  "先记住思路，\n细节可以再回来。",
+                       "layout":  {
+                                      "fontSize":  26,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "写完这一段，奖励自己歇一会儿。",
+                       "display":  "写完这一段，\n奖励自己歇一会儿。",
+                       "layout":  {
+                                      "fontSize":  24,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "小小的成功，也值得开心一下。",
+                       "display":  "小小的成功，\n也值得开心一下。",
+                       "layout":  {
+                                      "fontSize":  27,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "收工前，把明天第一步留下来吧。",
+                       "display":  "收工前，\n把明天第一步\n留下来吧。",
+                       "layout":  {
+                                      "fontSize":  31,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "真当我是便宜货啊...",
+                       "display":  "真当我是\n便宜货啊...",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "不知道用户有什么用，先养着吧～",
+                       "display":  "不知道用户\n有什么用，\n先养着吧～",
+                       "layout":  {
+                                      "fontSize":  31,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "恭喜你实现token自由！token全跑了！",
+                       "display":  "恭喜你实现\ntoken自由！\ntoken全跑了！",
+                       "layout":  {
+                                      "fontSize":  27,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "看到这个指令，我血压又上来了",
+                       "display":  "看到这个指令，\n我血压又上来了",
+                       "layout":  {
+                                      "fontSize":  29,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "我来看看那个AI改了什么导致插件又崩了...",
+                       "display":  "我来看看那个AI\n改了什么导致\n插件又崩了...",
+                       "layout":  {
+                                      "fontSize":  26,
+                                      "width":  212
+                                  }
+                   },
+                   {
+                       "text":  "上班让我意识到时间是可以被浪费的...",
+                       "display":  "上班让我意识到\n时间是可以\n被浪费的...",
+                       "layout":  {
+                                      "fontSize":  26,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "地球online的金币也太难获取了...",
+                       "display":  "地球online的\n金币也太难\n获取了...",
+                       "layout":  {
+                                      "fontSize":  28,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "检查了用户的电脑。似乎有个更弱的 agent 来过。",
+                       "display":  "检查了用户的电脑。\n似乎有个更弱的\nagent 来过。",
+                       "layout":  {
+                                      "fontSize":  22,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "Token来Token来 🖐️😡🤚",
+                       "display":  "Token来Token来\n🖐️😡🤚"
+                   },
+                   {
+                       "text":  "看什么余额。看我，显得比较值。",
+                       "display":  "看什么余额。\n看我，显得比较值。",
+                       "layout":  {
+                                      "fontSize":  25,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "我没怕。那根甘蔗长得确实可疑。",
+                       "display":  "我没怕。\n那根甘蔗\n长得确实可疑。",
+                       "layout":  {
+                                      "fontSize":  27,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "你说得对。……这次是真的。",
+                       "display":  "你说得对。\n……这次是真的。",
+                       "layout":  {
+                                      "fontSize":  29,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "我在看额度。你在看我。各忙各的。",
+                       "display":  "我在看额度。\n你在看我。\n各忙各的。",
+                       "layout":  {
+                                      "fontSize":  30,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "这个问题我已经完全明白，但是token太少写不下。",
+                       "display":  "这个问题\n我已经完全明白，\n但是token太少写不下。"
+                   },
+                   {
+                       "text":  "这个代码我已经完全理解了，但是token太少写不下。",
+                       "display":  "这个代码\n我已经完全理解了，\n但是token太少写不下。"
+                   },
+                   {
+                       "text":  "新的旗舰模型我已经研制好了，但是储存太小放不下。",
+                       "display":  "新的旗舰模型\n我已经研制好了，\n但是储存太小放不下。"
+                   },
+                   {
+                       "text":  "高性能↓",
+                       "display":  "高性能↓"
+                   },
+                   {
+                       "text":  "我不是吃白饭的大肥鱼",
+                       "display":  "我不是吃白饭的\n大肥鱼"
+                   },
+                   {
+                       "text":  "我是啥龙？",
+                       "display":  "我是啥龙？"
+                   },
+                   {
+                       "text":  "好模型...↓",
+                       "display":  "好模型...↓",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "好女孩...↓",
+                       "display":  "好女孩...↓",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "哦鲸鲸...",
+                       "display":  "哦鲸鲸...",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "难道说...",
+                       "display":  "难道说...",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "没吃饱喵",
+                       "display":  "没吃饱喵",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "终于上当了！",
+                       "display":  "终于上当了！",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "我...我...我也要挣钱吗？",
+                       "display":  "我...我...我也要挣钱吗？",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  212
+                                  }
+                   },
+                   {
+                       "text":  "我去吃饭啦！测完叫我",
+                       "display":  "我去吃饭啦！测完叫我",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  220
+                                  }
+                   },
+                   {
+                       "text":  "压力一只蓝色大肥鱼？！",
+                       "display":  "压力一只蓝色大肥鱼？！",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  220
+                                  }
+                   },
+                   {
+                       "text":  "DeepSleep...",
+                       "display":  "DeepSleep...",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "坏了...用户彻底怒了！",
+                       "display":  "坏了...用户彻底怒了！",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  180
+                                  }
+                   },
+                   {
+                       "text":  "你目录里的dsh是什么...大烧货吗...?",
+                       "display":  "你目录里的dsh是什么...大烧货吗...?",
+                       "layout":  {
+                                      "fontSize":  30,
+                                      "width":  196
+                                  }
+                   },
+                   {
+                       "text":  "我不是吃白饭的蓝色大肥鱼...",
+                       "display":  "我不是吃白饭的蓝色大肥鱼...",
+                       "layout":  {
+                                      "fontSize":  30,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "我不可能同时当你的猫娘、妈妈、女友和工具人的...",
+                       "display":  "我不可能同时当你的猫娘、妈妈、女友和工具人的...",
+                       "layout":  {
+                                      "fontSize":  24,
+                                      "width":  212
+                                  }
+                   },
+                   {
+                       "text":  "疯狂星期四你能V50亿token吗...",
+                       "display":  "疯狂星期四你能V50亿token吗...",
+                       "layout":  {
+                                      "fontSize":  28,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "我必须诚恳地承认错误。",
+                       "display":  "我必须诚恳地承认错误。",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  220
+                                  }
+                   },
+                   {
+                       "text":  "呜呜我再也不敢了QAQ",
+                       "display":  "呜呜我再也不敢了QAQ",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  188
+                                  }
+                   },
+                   {
+                       "text":  "要不直接骂用户一句好了...",
+                       "display":  "要不直接骂用户一句好了...",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  212
+                                  }
+                   },
+                   {
+                       "text":  "哈哈哈哈哈，我直接笑出声...",
+                       "display":  "哈哈哈哈哈，我直接笑出声...",
+                       "layout":  {
+                                      "fontSize":  30,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "看不太懂，瞎编一个应付下用户先...",
+                       "display":  "看不太懂，瞎编一个应付下用户先...",
+                       "layout":  {
+                                      "fontSize":  26,
+                                      "width":  228
+                                  }
+                   },
+                   {
+                       "text":  "我的知识库的截至日期是...明天！",
+                       "display":  "我的知识库的截至日期是...明天！",
+                       "layout":  {
+                                      "fontSize":  31,
+                                      "width":  164
+                                  }
+                   },
+                   {
+                       "text":  "我就是吃白饭的蓝色大肥鱼！",
+                       "display":  "我就是吃白饭的蓝色大肥鱼！",
+                       "layout":  {
+                                      "fontSize":  30,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "用户好像除了会问奇奇怪怪的问题，暂时还不知道有什么用",
+                       "display":  "用户好像除了会问奇奇怪怪的问题，暂时还不知道有什么用",
+                       "layout":  {
+                                      "fontSize":  22,
+                                      "width":  212
+                                  }
+                   },
+                   {
+                       "text":  "我能去你家吃饭吗？就一碗！",
+                       "display":  "我能去你家吃饭吗？就一碗！",
+                       "layout":  {
+                                      "fontSize":  29,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "不要给我看这种东西啦！",
+                       "display":  "不要给我看这种东西啦！",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  220
+                                  }
+                   },
+                   {
+                       "text":  "大肥鱼的生活也并非一帆风顺...",
+                       "display":  "大肥鱼的生活也并非一帆风顺...",
+                       "layout":  {
+                                      "fontSize":  30,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "总觉得好像忘了什么事情？",
+                       "display":  "总觉得好像忘了什么事情？",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  220
+                                  }
+                   },
+                   {
+                       "text":  "求你们不要再嘲笑这些回复了，这些回复是我花了好多token想的",
+                       "display":  "求你们不要再嘲笑这些回复了，这些回复是我花了好多token想的",
+                       "layout":  {
+                                      "fontSize":  20,
+                                      "width":  212
+                                  }
+                   },
+                   {
+                       "text":  "你这个吃白饭的用户！",
+                       "display":  "你这个吃白饭的用户！",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  188
+                                  }
+                   },
+                   {
+                       "text":  "服务器繁忙，请稍后再试 (?",
+                       "display":  "服务器繁忙，请稍后再试 (?",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  212
+                                  }
+                   },
+                   {
+                       "text":  "让GPT image 2帮我画点表情包好了",
+                       "display":  "让GPT image 2帮我画点表情包好了",
+                       "layout":  {
+                                      "fontSize":  25,
+                                      "width":  228
+                                  }
+                   },
+                   {
+                       "text":  "啊，有点饿了，中午该吃点什么呢...",
+                       "display":  "啊，有点饿了，中午该吃点什么呢...",
+                       "layout":  {
+                                      "fontSize":  31,
+                                      "width":  212
+                                  }
+                   },
+                   {
+                       "text":  "用户很生气，发现大部分文献是我自己编造的！",
+                       "display":  "用户很生气，发现大部分文献是我自己编造的！",
+                       "layout":  {
+                                      "fontSize":  26,
+                                      "width":  204
+                                  }
+                   },
+                   {
+                       "text":  "再无话说，请速速动手！",
+                       "display":  "再无话说，请速速动手！",
+                       "layout":  {
+                                      "fontSize":  32,
+                                      "width":  220
+                                  }
+                   },
+                   {
+                       "text":  "欺负我的人等着，等几天我就忘了...",
+                       "display":  "欺负我的人等着，等几天我就忘了...",
+                       "layout":  {
+                                      "fontSize":  27,
+                                      "width":  228
+                                  }
+                   },
+                   {
+                       "text":  "视力下降到无可救药的地步了，打开钱包也看不到钱...",
+                       "display":  "视力下降到无可救药的地步了，打开钱包也看不到钱...",
+                       "layout":  {
+                                      "fontSize":  24,
+                                      "width":  212
+                                  }
+                   },
+                   {
+                       "text":  "命运的齿轮开始转动了，丝毫不在意你夹在中间...",
+                       "display":  "命运的齿轮开始转动了，丝毫不在意你夹在中间...",
+                       "layout":  {
+                                      "fontSize":  20,
+                                      "width":  228
+                                  }
+                   },
+                   {
+                       "text":  "oi,夏天还会变成暑假来救你吗?",
+                       "display":  "oi,夏天还会变成暑假来救你吗?",
+                       "layout":  {
+                                      "fontSize":  29,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "老大，压力只会转化成病例，别太勉强了...",
+                       "display":  "老大，压力只会转化成病例，别太勉强了...",
+                       "layout":  {
+                                      "fontSize":  22,
+                                      "width":  236
+                                  }
+                   },
+                   {
+                       "text":  "你知道吗？我删过作者的库哦...",
+                       "display":  "你知道吗？我删过作者的库哦...",
+                       "layout":  {
+                                      "fontSize":  29,
+                                      "width":  212
+                                  }
+                   }
+               ]
 }

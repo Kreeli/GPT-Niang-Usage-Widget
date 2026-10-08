@@ -1,4 +1,4 @@
-param([string]$TestRoot=$PSScriptRoot)
+﻿param([string]$TestRoot=$PSScriptRoot)
 $ErrorActionPreference='Stop'
 $script:assertions=0
 function Assert-Lifecycle([bool]$Condition,[string]$Message){
@@ -23,7 +23,7 @@ $source=[IO.File]::ReadAllText($widgetFile,[Text.Encoding]::UTF8)
 $tokens=$null;$parseErrors=$null
 $ast=[Management.Automation.Language.Parser]::ParseInput($source,[ref]$tokens,[ref]$parseErrors)
 if($parseErrors.Count){throw 'The widget source has PowerShell parse errors.'}
-foreach($functionName in @('Ensure-QuotaWorker','Stop-WidgetRuntime')){
+foreach($functionName in @('Ensure-QuotaWorker','Stop-WidgetRuntime','Flush-WidgetSettings')){
   $definition=$ast.Find({param($node)$node -is [Management.Automation.Language.FunctionDefinitionAst] -and $node.Name-eq $functionName},$true)
   if(!$definition){throw ('Missing lifecycle function: '+$functionName)}
   . ([scriptblock]::Create($definition.Extent.Text))

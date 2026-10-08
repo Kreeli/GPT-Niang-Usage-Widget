@@ -1,4 +1,4 @@
-# Native WPF flowing colours. One shared phase keeps every surface in sync.
+﻿# Native WPF flowing colours. One shared phase keeps every surface in sync.
 $script:colorMode='mixed'
 $script:colorChance=0.5
 $script:colorTextChance=3
@@ -28,7 +28,8 @@ function Get-WidgetColorScope([string]$Text){
 
 function Read-WidgetColorTriggers {
   try{
-    $file=Join-Path $script:dataDir 'color-triggers.json'
+    $script:colorSpecialQuotes=if((Resolve-WidgetQuoteCharacter '')-eq 'deepseek-niang'){@('DeepSleep...')}else{@('Token来，Token来')}
+    $file=Get-WidgetCharacterDataPath $script:dataDir 'color-triggers' ''
     if(Test-Path -LiteralPath $file){
       $saved=Get-Content -LiteralPath $file -Raw -Encoding UTF8|ConvertFrom-Json
       if($null-ne $saved.quotes){$script:colorSpecialQuotes=@(ConvertTo-WidgetQuoteRows $saved.quotes|ForEach-Object{$_.text})}
@@ -37,7 +38,10 @@ function Read-WidgetColorTriggers {
 }
 function Save-WidgetColorTriggers($Lines){
   $script:colorSpecialQuotes=@(ConvertTo-WidgetQuoteRows $Lines|ForEach-Object{$_.text})
-  Write-WidgetJson (Join-Path $script:dataDir 'color-triggers.json') @{version=1;quotes=@($script:colorSpecialQuotes)}
+  $file=Get-WidgetCharacterDataPath $script:dataDir 'color-triggers' ([string]$script:colorTriggerEditor.Tag)
+  $null=[IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($file))
+  Write-WidgetJson $file @{version=2;quotes=@($script:colorSpecialQuotes)}
+  Read-WidgetColorTriggers
   Update-WidgetColorScene
 }
 function Open-ColorTriggerEditor {
@@ -52,6 +56,8 @@ function Open-ColorTriggerEditor {
  </Grid>
 </Window>
 '@)
+  $editor.Tag=Resolve-WidgetQuoteCharacter ''
+  $editor.Title=(Get-WidgetQuoteCharacterName ([string]$editor.Tag))+' · 特殊台词'
   $script:colorTriggerEditor=$editor;$editor.Owner=$script:window
   $editor.FindName('Lines').Text=$script:colorSpecialQuotes-join [Environment]::NewLine
   $editor.FindName('Save').Add_Click({
@@ -178,7 +184,7 @@ function Initialize-WidgetColors {
   foreach($role in @('accent','ink','surface')){$null=New-WidgetFlowBrush $role}
   Set-WidgetColorPalette 'rainbow' -Immediate
   $mask=[Windows.Media.ImageBrush]::new($script:ui.Girl.Source)
-  $mask.Stretch=[Windows.Media.Stretch]::UniformToFill
+  $mask.Stretch=[Windows.Media.Stretch]::Uniform
   $root=$script:ui.Root;$girlIndex=$root.Children.IndexOf($script:ui.Girl)
   $halo=[Windows.Shapes.Rectangle]::new();$halo.Width=$script:ui.Girl.Width;$halo.Height=$script:ui.Girl.Height
   $halo.Fill=$script:widgetColors.brushes.accent;$halo.Opacity=0.62;$halo.OpacityMask=$mask

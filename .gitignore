@@ -26,3 +26,8 @@ Thumbs.db
 **/gui.lock
 **/worker-ownership.lock
 **/worker.log
+
+# User-provided DSH artwork is local only; see THIRD_PARTY_NOTICES.md.
+**/deepseek-niang.png
+**/DSniang1.png
+*.log

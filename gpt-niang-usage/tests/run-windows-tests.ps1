@@ -1,12 +1,18 @@
-param([switch]$WidgetOnly,[string]$PreviewDirectory)
+﻿param([switch]$WidgetOnly,[string]$PreviewDirectory)
 $ErrorActionPreference='Stop'
 if($WidgetOnly){
   $source=[IO.File]::ReadAllText((Join-Path $PSScriptRoot 'widget.test.ps1'),[Text.Encoding]::UTF8)
   & ([ScriptBlock]::Create($source)) -TestRoot $PSScriptRoot -PreviewDirectory $PreviewDirectory
   return
 }
+$hasOutputDevice=$true
+if($env:CI-eq 'true'){
+  Add-Type 'public static class NiangTestAudioDevices { [System.Runtime.InteropServices.DllImport("winmm.dll")] public static extern uint waveOutGetNumDevs(); }'
+  $hasOutputDevice=[NiangTestAudioDevices]::waveOutGetNumDevs()-gt 0
+}
 $powerShell=Join-Path $env:WINDIR 'System32\WindowsPowerShell\v1.0\powershell.exe'
-foreach($name in @('installation.test.ps1','lifecycle.test.ps1','entrypoint.test.ps1','quote-layout.test.ps1')){
+foreach($name in @('installation.test.ps1','lifecycle.test.ps1','entrypoint.test.ps1','characters.test.ps1','quote-profiles.test.ps1','audio.test.ps1','press-animation.test.ps1','responsiveness.test.ps1','quote-layout.test.ps1')){
+  if(!$hasOutputDevice -and $name-in @('audio.test.ps1','responsiveness.test.ps1')){Write-Output ('SKIP '+$name+': CI runner has no audio output device; run locally for physical audio checks');continue}
   & $powerShell -NoProfile -STA -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot $name)
   if($LASTEXITCODE-ne 0){throw "$name failed ($LASTEXITCODE)"}
 }

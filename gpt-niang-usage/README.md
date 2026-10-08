@@ -1,3 +1,5 @@
+> 本目录包含 Kreeli 的 Windows 融合修改。请先阅读 [融合版安装与功能](../README.md) 和 [第三方来源说明](../THIRD_PARTY_NOTICES.md)。以下为上游运行时说明。
+
 # GPT娘额度挂件
 
 这是 Windows 插件与桌面挂件目录，其中的 Node.js 运行时也由 Mac 原生应用复用。安装、使用、更新和隐私说明请看[项目主页](../README.md)。
